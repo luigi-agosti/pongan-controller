@@ -1,22 +1,15 @@
 package com.giago.pongan;
 
-import java.net.HttpURLConnection;
-import java.net.URL;
-
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.LoaderManager;
 import android.support.v4.content.Loader;
-import android.util.Log;
 import android.view.View;
 import android.view.View.OnClickListener;
 
 public class Pongan extends FragmentActivity implements android.support.v4.app.LoaderManager.LoaderCallbacks<Void> {
 
-    private static final int CONNECTION_TIMEOUT = 10000;
-    private static final int READ_TIMEOUT = 10000;
     private static final String HOST = "http://pongan-experiment.appspot.com/move";
     private static final String RED_DOWN = HOST + "?code=1";
     private static final String BLUE_DOWN = HOST + "?code=3";
@@ -57,7 +50,10 @@ public class Pongan extends FragmentActivity implements android.support.v4.app.L
         super.onCreate(savedInstanceState);
         setContentView(R.layout.pongan);
         setColor();
-
+        if(color == RED) {
+            findViewById(R.id.up).setBackgroundResource(R.drawable.red_arrowup);
+            findViewById(R.id.down).setBackgroundResource(R.drawable.red_arrowdown);
+        }
         findViewById(R.id.up).setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -82,7 +78,6 @@ public class Pongan extends FragmentActivity implements android.support.v4.app.L
     }
 
     private void callLoader(String url) {
-        Log.d("xxx", "color " + color);
         Bundle b = new Bundle();
         b.putString("url", url);
         getSupportLoaderManager().initLoader(0, b, this);
