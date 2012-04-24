@@ -1,0 +1,32 @@
+h1. Pongan : Controller
+
+This project is one of the three projects made for the Global Google Tv Hackathon London
+The overall idea of the project is a modern version of Loren Carpenter’s crowd experiment
+
+The controller is a simple android application, it gives you the choice between red and blue
+and the you can controll the movement of the puddle up and down
+
+Parts of the project are :
+
+- android controller for mobiles
+
+https://github.com/luigi-agosti/pongan-controller
+
+- google tv display for the pong game
+
+https://github.com/luigi-agosti/pongan-display
+
+- google appengine to manage communication with channel api
+
+https://github.com/dreab8/pongan-server
+
+Please remember that the code is done during an hackathon and as such shouldn't be use for any business scenario
+
+
+Link to google tv hackathon event :
+
+http://www.meetup.com/android/events/52817592/
+
+http://thenextweb.com/uk/2012/04/22/these-hackers-want-to-get-into-your-tv-and-make-it-awesome/
+
+http://www.youtube.com/watch?v=3h691NPJnvQ
